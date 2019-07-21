@@ -1,29 +1,18 @@
 <?php
 include 'config.php';
 
+if (!$connection) {
+    die("Error de conexion".mysqli_connect_error());
+}
+
+$id_note = $_POST['id'];
 $nombre = $_POST['valor1'];
 $descripcion = $_POST['valor2'];
 $estado = $_POST['valor3'];
 
 
 
-if (!$connection) {
-    die("Error de conexion".mysqli_connect_error());
-}
-
-$sql = "INSERT INTO `".$table."` (
-    `id_note`,
-    `nombre`,
-    `descripcion`,
-    `estado`
-    )
-    VALUES (
-        NULL, 
-        '$nombre', 
-        '$descripcion', 
-        '$estado'
-        )"
-;
+$sql= "UPDATE `".$table."` SET `nombre` = '".$nombre."', `descripcion` = '".$descripcion."', `estado` = '".$estado."' WHERE `Notas`.`id_note` = ".$id_note." ";
 
 
 if (mysqli_query($connection, $sql)) {
