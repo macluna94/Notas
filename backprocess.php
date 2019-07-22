@@ -27,7 +27,14 @@ $sql = "INSERT INTO `".$table."` (
 
 
 if (mysqli_query($connection, $sql)) {
-    echo "Successefull";
+    echo ' <div id="alerta" class="alert alert-success" style="margin: 0.5em;padding-right: 0.1rem;padding-left: 0.1rem;padding-top: 0.1rem;padding-bottom: 0.1rem;margin-top: 0.1rem;">
+    <strong>Tarea Creada!</strong> La nota '.$nombre.' se ha registrado
+  </div>
+  <script>
+ $("#alerta").fadeOut(5000);
+ </script>
+  
+  ';
 }
 else {
     echo "Error".$sql."<br>";
@@ -35,6 +42,9 @@ else {
 }
 
 mysqli_close($connection);
+
+
+
 
 
 ?>
