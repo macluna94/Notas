@@ -1,0 +1,12 @@
+.titleColumn{
+    text-align: center;
+    padding: 0.2rem;
+    margin-bottom: 0 ;
+}
+
+.flexy{
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}

@@ -13,7 +13,7 @@ $consul = mysqli_query($connection, $sql) or die ( "Algo ha ido mal en la consul
 
 while ($row = mysqli_fetch_array($consul)) {
     echo '
-        <div class="card " style="width: 18rem;">
+        <div class="card " style="display: flex; justify-content:center;margin: 1em;">
                 <div class="card-header bg-light mb-3">
                     #'.$row['id_note'].' '.$row['nombre'].'
                 </div>
