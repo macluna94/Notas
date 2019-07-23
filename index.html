@@ -26,54 +26,57 @@
 </head>
 
 <body>
-    <div class="container-fluid">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="note-icon.png" width="30" height="30" class="d-inline-block align-top" alt="note-icon">
-                    Notas
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-
-
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active align-items-center">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Grafica</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Reportes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Configuracion</a>
-                        </li>
-                    </ul>
-
-
-
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Busqueda">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
-                    </form>
-
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="note-icon.png" width="30" height="30" class="d-inline-block align-top" alt="note-icon">
+                        Notas
+                    </a>
+    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    
+    
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active align-items-center">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Grafica</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Reportes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Configuracion</a>
+                            </li>
+                        </ul>
+    
+    
+    
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Busqueda">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+                        </form>
+    
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
 
-        <div class="row" style="margin-top: 0.5em;padding: 0.5em;" >
+
+    <div class="container-fluid DashButton">
+
+        <div class="row" style="padding-top: 1em;" >
             <div class="col">
-                <h4>Registro de Actividad</h4>
+                        <h4>Registro de Actividad</h4> 
             </div>
+
             <div class="col ">
                 <small id="resultado" class="text-center"></small>
             </div>
@@ -87,7 +90,7 @@
                             </button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-info btn-sm" id="btn_update" onclick="cargar()">
+                            <button class="btn btn-info btn-sm" id="btn_update" onclick="cargar();cargarP();cargarC();">
                                 <i class="fas fa-sync"></i>
                                 Mostrar Nota
                             </button>
@@ -96,35 +99,57 @@
             </div>
         </div>
 
-        <br>
 
 
 
 
     </div>
     
+    <div class="container-fluid">
+
+    
+
     <div class="row">
-        <div class="col" id="colActive" style="background-color: cadetblue;">
-            <div class="">
-                <h5 class="titleColumn">Tareas Activas</h5>
+        <div class="col" id="colActive" style="padding: 0%;">
+            <div class="headerColumn">
+                <h5 class="titleColumn-Active">
+                        <i class="fas fa-flag"></i>
+                    <strong>
+                        Nuevas Tareas
+                    </strong>
+                </h5>
             </div>
-            <div id="noteList" class=""></div>
+            <div id="noteList-A" style="padding: 1em;"></div>
         </div>
         
-        <div class="col" id="colProgress" style="background-color: brown;">
+        <div class="col" id="colProgress" style="padding: 0%;">
             <div class="">
-                    <h5>Tareas Activas</h5>
+                    <h5 class="titleColumn-Progress" >
+                            <i class="fas fa-spinner"></i>
+                        <strong>
+                            Tareas en Progreso
+                        </strong>
+                    </h5>
+                    <div id="noteList-P" style="padding: 1em;"></div>
+
             </div>
         </div>
 
-        <div class="col" id="colFinal" style="background-color:chartreuse;">
+        <div class="col" id="colFinal" style="padding: 0%;">
             <div class="">
-                <h5>Tareas Activas</h5>
+                <h5 class="titleColumn-Completed">
+                        <i class="fas fa-check-square"></i>
+                    <strong>
+                        Tareas Completadas
+
+                    </strong>
+                </h5>
+                <div id="noteList-C" style="padding: 1em;"></div>
             </div>
             
         </div>
     </div>
-
+    </div>
 
 
         <!-- Modal -->
@@ -304,10 +329,33 @@
                 url: 'backCharge.php',
                 type: 'post',
                 success: function (datos) {
-                    $('#noteList').html(datos);
+                    $('#noteList-A').html(datos);
                 }
             });
         }
+
+
+        function cargarP(){
+            $.ajax({
+                data:{},
+                url: 'backChargeP.php',
+                type: 'post',
+                success: function(datosP){
+                    $('#noteList-P').html(datosP);
+                }
+            });
+        }
+        function cargarC(){
+            $.ajax({
+                data:{},
+                url: 'backChargeC.php',
+                type: 'post',
+                success: function(datosC){
+                    $('#noteList-C').html(datosC);
+                }
+            });
+        }
+
 
         function editar(id_note) {
             $.ajax({

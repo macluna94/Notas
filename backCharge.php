@@ -7,9 +7,11 @@ if (!$connection) {
     die("Error de conexion".mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM `".$table."`";
+$sql = "SELECT *  FROM `Notas` WHERE `estado` = 1 ORDER BY `estado`  ASC";
+
 
 $consul = mysqli_query($connection, $sql) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
 
 while ($row = mysqli_fetch_array($consul)) {
     echo '
@@ -24,13 +26,22 @@ while ($row = mysqli_fetch_array($consul)) {
                     ';
                         switch ($row['estado']){
                         case 1:
-                        echo "<span>Sin Comenzar</span>";
+                        echo '
+                        <div class="alert alert-success" role="alert">
+                            Sin Comenzar
+                        </div>';
                         break;
                         case 2:
-                        echo "<span>En Progreso</span>";
+                        echo '
+                        <div class="alert alert-info" role="alert">
+                            En Progreso
+                        </div>';
                         break;
                         case 3:
-                        echo "<span>Finalizada</span>";
+                        echo '
+                        <div class="alert alert-danger" role="alert">
+                            Finalizada
+                        </div>';
                         break;
                         }
                     echo '
@@ -38,12 +49,12 @@ while ($row = mysqli_fetch_array($consul)) {
             <div class="card-footer">
                 <div class="row justify-content-around">
                     <div class="col-6">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EditarModal">
+                        <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#EditarModal">
                             Editar
                         </button>
                     </div>
                     <div class="col-6">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#EliminarModal">
+                        <button type="button" class="btn btn-danger btn-sm btn-block" data-toggle="modal" data-target="#EliminarModal">
                             Eliminar
                         </button>
                     </div>
@@ -54,28 +65,6 @@ while ($row = mysqli_fetch_array($consul)) {
 
 
 mysqli_close($connection);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>

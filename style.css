@@ -1,12 +1,50 @@
-.titleColumn{
+.titleColumn-Active{
     text-align: center;
+    color: aliceblue;
     padding: 0.2rem;
     margin-bottom: 0 ;
+    border-radius: 2px;
+    background-color: #45db37; 
 }
+
+.titleColumn-Progress{
+    text-align: center;
+    color: aliceblue;
+    padding: 0.2rem;
+    margin-bottom: 0 ;
+    border-radius: 5px;
+    background-color: #449ce4; 
+}
+
+.titleColumn-Completed{
+    text-align: center;
+    color: aliceblue;
+    padding: 0.2rem;
+    margin-bottom: 0 ;
+    border-radius: 5px;
+    background-color: #f24b4b; 
+}
+
 
 .flexy{
     display: flex;
     height: 300px;
     justify-content: center;
     align-items: center;
+}
+
+.headerColumn{
+
+}
+
+
+.DashButton{
+    background-color: azure;
+}
+
+body{
+    background: #536976;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
