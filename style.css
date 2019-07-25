@@ -2,8 +2,7 @@
     text-align: center;
     color: aliceblue;
     padding: 0.2rem;
-    margin-bottom: 0 ;
-    border-radius: 2px;
+    
     background-color: #45db37; 
 }
 
@@ -11,8 +10,6 @@
     text-align: center;
     color: aliceblue;
     padding: 0.2rem;
-    margin-bottom: 0 ;
-    border-radius: 5px;
     background-color: #449ce4; 
 }
 
@@ -20,8 +17,6 @@
     text-align: center;
     color: aliceblue;
     padding: 0.2rem;
-    margin-bottom: 0 ;
-    border-radius: 5px;
     background-color: #f24b4b; 
 }
 
@@ -43,8 +38,18 @@
 }
 
 body{
-    background: #536976;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-color: #141414;
+}
 
+.titleNote{
+    background: #FFF65D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFF65D, rgb(255, 250, 112));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFF65D, rgb(255, 250, 112));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.titleNoteBody{
+    background-color: #FFFD8F;
 }

@@ -8,7 +8,7 @@ if (!$connection) {
 }
 
 
-$inCompleted = "SELECT *  FROM `Notas` WHERE `estado` = 3 ORDER BY `estado`  ASC";
+$inCompleted = "SELECT *  FROM `$table` WHERE `estado` = 3 ORDER BY `estado`  ASC";
 
 
 $consulProgress = mysqli_query($connection, $inCompleted) or die ("Erro de consulta".$inCompleted);
@@ -18,10 +18,10 @@ $consulProgress = mysqli_query($connection, $inCompleted) or die ("Erro de consu
 while($rowCompleted = mysqli_fetch_array($consulProgress)){
     echo '
     <div class="card " style="display: flex; justify-content:center;margin: 1em;">
-            <div class="card-header bg-light mb-3">
+            <div class="card-header titleNote">
                 #'.$rowCompleted['id_note'].' '.$rowCompleted['nombre'].'
             </div>
-            <div class="card-body">
+            <div class="card-body titleNoteBody">
                 <p class="card-text">
                     '.$rowCompleted['descripcion'].'
                 </p>
@@ -48,18 +48,18 @@ while($rowCompleted = mysqli_fetch_array($consulProgress)){
                     }
                 echo '
         </div>
-        <div class="card-footer">
+        <div class="card-footer titleNote">
             <div class="row justify-content-around">
-                <div class="col-6">
-                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#EditarModal">
-                        Editar
-                    </button>
-                </div>
-                <div class="col-6">
-                    <button type="button" class="btn btn-danger btn-sm btn-block" data-toggle="modal" data-target="#EliminarModal">
-                        Eliminar
-                    </button>
-                </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-primary btn-sm btn-block"  onclick="modalTransfer('.$rowCompleted['id_note'].')" data-toggle="modal" data-whatever="'.$rowCompleted['id_note'].'" data-target="#EditarModal" >
+                            Editar
+                        </button>
+                    </div> 
+                    <div class="col-6">
+                        <button type="button" class="btn btn-danger btn-sm btn-block" data-toggle="modal" data-target="#EliminarModal" data-whatever="'.$rowCompleted['id_note'].'" onclick="modalTransferE('.$rowCompleted['id_note'].')">
+                            Eliminar
+                        </button>
+                    </div>
             </div>
         </div>
     </div>';

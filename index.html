@@ -21,81 +21,81 @@
     </script>
 
     <script src="https://kit.fontawesome.com/ea0ab640f1.js"></script>
-    
+
 
 </head>
 
-<body>
+<body style="background-color: #3a3d40;" >
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="note-icon.png" width="30" height="30" class="d-inline-block align-top" alt="note-icon">
-                        Notas
-                    </a>
-    
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    
-    
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active align-items-center">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Grafica</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Reportes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Configuracion</a>
-                            </li>
-                        </ul>
-    
-    
-    
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Busqueda">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
-                        </form>
-    
-                    </div>
-                </div>
-            </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="note-icon.png" width="30" height="30" class="d-inline-block align-top" alt="note-icon">
+                Notas
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active align-items-center">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Graficas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Configuracion</a>
+                    </li>
+                </ul>
+
+
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Busqueda">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
 
 
 
     <div class="container-fluid DashButton">
 
-        <div class="row" style="padding-top: 1em;" >
-            <div class="col">
-                        <h4>Registro de Actividad</h4> 
+        <div class="row" style="padding-top: 1em;">
+            <div class="col-4">
+                <h4>Registro de Actividad</h4>
             </div>
 
-            <div class="col ">
+            <div class="col-4">
                 <small id="resultado" class="text-center"></small>
             </div>
-            <div class="col">
-
-                <ul class="nav justify-content-end"  >
-                        <li class="nav-item">
-                            <button class="btn btn-success btn-sm" style="margin-right: 0.5em" type="button" data-toggle="modal" data-target="#AgregarModal">
-                                <i class="fas fa-plus-circle"></i>
-                                Agregar
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-info btn-sm" id="btn_update" onclick="cargar();cargarP();cargarC();">
-                                <i class="fas fa-sync"></i>
-                                Mostrar Nota
-                            </button>
-                        </li>
-                    </ul>
+            <div class="col-4">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <button class="btn btn-success btn-sm" style="margin-right: 0.5em" type="button"
+                            data-toggle="modal" data-target="#AgregarModal">
+                            <i class="fas fa-plus-circle"></i>
+                            Agregar
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-info btn-sm" id="btn_update" onclick="fullCharge();">
+                            <i class="fas fa-sync"></i>
+                            Mostrar Nota
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -104,125 +104,76 @@
 
 
     </div>
-    
+
     <div class="container-fluid">
 
-    
 
-    <div class="row">
-        <div class="col" id="colActive" style="padding: 0%;">
-            <div class="headerColumn">
-                <h5 class="titleColumn-Active">
+
+        <div class="row">
+            <div class="col" id="colActive" style="padding: 0%;">
+                <div class="headerColumn">
+                    <h5 class="titleColumn-Active">
                         <i class="fas fa-flag"></i>
-                    <strong>
-                        Nuevas Tareas
-                    </strong>
-                </h5>
+                        <strong>
+                            Nuevas Tareas
+                        </strong>
+                    </h5>
+                </div>
+                <div id="noteList-I" style="padding: 1em;"></div>
             </div>
-            <div id="noteList-A" style="padding: 1em;"></div>
-        </div>
-        
-        <div class="col" id="colProgress" style="padding: 0%;">
-            <div class="">
-                    <h5 class="titleColumn-Progress" >
-                            <i class="fas fa-spinner"></i>
+
+            <div class="col" id="colProgress" style="padding: 0%;">
+                <div class="">
+                    <h5 class="titleColumn-Progress">
+                        <i class="fas fa-spinner"></i>
                         <strong>
                             Tareas en Progreso
                         </strong>
                     </h5>
                     <div id="noteList-P" style="padding: 1em;"></div>
 
-            </div>
-        </div>
-
-        <div class="col" id="colFinal" style="padding: 0%;">
-            <div class="">
-                <h5 class="titleColumn-Completed">
-                        <i class="fas fa-check-square"></i>
-                    <strong>
-                        Tareas Completadas
-
-                    </strong>
-                </h5>
-                <div id="noteList-C" style="padding: 1em;"></div>
-            </div>
-            
-        </div>
-    </div>
-    </div>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="AgregarModal" tabindex="-1" role="dialog" aria-labelledby="AgregarModal"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="AgregarModal">Nota ${id}: ${nombre}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-
-                        <div class="form-group">
-                            <label for="noteName">Nombre:</label>
-                            <input type="text" class="form-control" id="noteName">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description">Descripcion:</label>
-                            <textarea id="description" class="form-control" cols="3" rows="4"
-                                aria-describedby="emailHelp"></textarea>
-                            <small id="emailHelp" class="form-text text-muted">Describe detalladamente las acciones o
-                                instrucciones.</small>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="stateNote">Estado:</label>
-
-                            <select class="form-control" id="stateNote">
-                                <option value="1">Inicio</option>
-                                <option value="2">Progreso</option>
-                                <option value="3">Completado</option>
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal"  id="saveNote"
-                            onclick="SaveNote($('#noteName').val(),$('#description').val(),$('#stateNote').val());fadeAlert();">
-                            Guardar
-                        </button>
-                    </div>
                 </div>
             </div>
+
+            <div class="col" id="colFinal" style="padding: 0%;">
+                <div class="">
+                    <h5 class="titleColumn-Completed">
+                        <i class="fas fa-check-square"></i>
+                        <strong>
+                            Tareas Completadas
+
+                        </strong>
+                    </h5>
+                    <div id="noteList-C" style="padding: 1em;"></div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="EditarModal"
+
+
+    <!-- Modal Agregar Nota -->
+    <div class="modal fade" id="AgregarModal" tabindex="-1" role="dialog" aria-labelledby="AgregarModal"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EditarModal">Nota ${id}: ${nombre}</h5>
+                <div class="modal-header titleNote">
+                    <h5 class="modal-title  justify-content-end" id="AgregarModal" >Nueva Nota</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body titleNoteBody">
+
 
                     <div class="form-group">
-                        <label for="nameNote">Nombre:</label>
-                        <input type="text" class="form-control" id="nameNote">
+                        <label for="noteName">Nombre:</label>
+                        <input type="text" class="form-control" id="noteName">
                     </div>
 
                     <div class="form-group">
-                        <label for="descripcion">Descripcion:</label>
-                        <textarea id="descripcion" class="form-control" cols="3" rows="4"
+                        <label for="description">Descripcion:</label>
+                        <textarea id="description" class="form-control" cols="3" rows="4"
                             aria-describedby="emailHelp"></textarea>
                         <small id="emailHelp" class="form-text text-muted">Describe detalladamente las acciones o
                             instrucciones.</small>
@@ -230,9 +181,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="noteState">Estado:</label>
+                        <label for="stateNote">Estado:</label>
 
-                        <select class="form-control" id="noteState">
+                        <select class="form-control" id="stateNote">
                             <option value="1">Inicio</option>
                             <option value="2">Progreso</option>
                             <option value="3">Completado</option>
@@ -240,9 +191,34 @@
 
                     </div>
                 </div>
+                <div class="modal-footer titleNote">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="saveNote"
+                        onclick="SaveNote($('#noteName').val(),$('#description').val(),$('#stateNote').val());fadeAlert();">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="EditarModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditarTitle">Mocachibo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="bodyModalEdit">
+
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-success" onclick="editar($('#noteNameEdit').val(),$('#descriptionEdit').val(),$('#stateNoteEdit').val())" data-dismiss="modal" >Guardar</button>
                 </div>
             </div>
         </div>
@@ -259,11 +235,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h3>Eliminar la nota ${id_note} ${Nombre} </h3>
+                    <h3>Eliminar la nota <small id="EditarTitle"></small> </h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="eliminar()">Guardar</button>
                 </div>
             </div>
         </div>
@@ -271,6 +247,39 @@
 
 
     <script>
+
+        function modalTransfer(val) {
+
+            var vali = val;
+            $('#EditarTitle').text(vali);
+
+            console.log("y"+vali);
+
+            function id(valix) {
+                $.ajax({
+                    data: {valix: valix},
+                    url: 'id.php',
+                    type: 'post',
+                    success: function (response) {
+                        $("#bodyModalEdit").html(response);
+                        console.log("x"+ valix);
+                    }
+                });
+            }
+            
+            id(vali);
+        }
+
+            function modalTransferE(val) {
+
+                var valiE = val;
+                $('#EditarTitle').text(valiE);
+
+                console.log("yE" + valiE);
+            }
+
+
+
         $("#EditarModal").dialog({
             modal: true,
             buttons: {
@@ -287,15 +296,14 @@
                 }
             }
         });
-
-                $("#AgregarModal").dialog({
-                modal: true,
-                buttons: {
+        $("#AgregarModal").dialog({
+            modal: true,
+            buttons: {
                 Ok: function () {
-                $(this).dialog("close");
+                    $(this).dialog("close");
                 }
-                }
-                });
+            }
+        });
 
 
         function SaveNote(valor1, valor2, valor3) {
@@ -314,7 +322,7 @@
                 },
                 success: function (response) {
                     $("#resultado").html(response);
-                    cargar();
+                    fullCharge();
                 }
             });
 
@@ -323,60 +331,82 @@
             document.getElementById("stateNote").selectedIndex = "0";
         }
 
-        function cargar() {
+
+        function fullCharge() {
+                cargarI();
+                cargarP();
+            cargarC();
+
+            }
+
+        function cargarI() {
             $.ajax({
                 data: {},
                 url: 'backCharge.php',
                 type: 'post',
                 success: function (datos) {
-                    $('#noteList-A').html(datos);
+                    $('#noteList-I').html(datos);
                 }
             });
         }
 
 
-        function cargarP(){
+        function cargarP() {
             $.ajax({
-                data:{},
+                data: {},
                 url: 'backChargeP.php',
                 type: 'post',
-                success: function(datosP){
+                success: function (datosP) {
                     $('#noteList-P').html(datosP);
                 }
             });
         }
-        function cargarC(){
+
+        function cargarC() {
             $.ajax({
-                data:{},
+                data: {},
                 url: 'backChargeC.php',
                 type: 'post',
-                success: function(datosC){
+                success: function (datosC) {
                     $('#noteList-C').html(datosC);
                 }
             });
         }
 
 
-        function editar(id_note) {
+        function editar(valor1, valor2, valor3) {
+            var id = $('#EditarTitle').text();
+
+            var parametros = {
+                "id": id,
+                "valor1": valor1,
+                "valor2": valor2,
+                "valor3": valor3
+            };
+
+
+
             $.ajax({
-                data: id_note,
+                data: parametros,
                 url: 'backedit.php',
                 type: 'post',
-                success: function (response) {
-                    $("#resultado").html(response);
-                    cargar();
+                success: function () {
+                    fullCharge();
                 }
             });
         }
 
         function eliminar() {
+            var id = $('#EditarTitle').text();
+            console.log("Elimanr: " + id);
+            
             $.ajax({
-                data: id_note,
+                data: {id_note: id},
                 url: 'backdelete.php',
                 type: 'post',
                 success: function (response) {
                     $("#resultado").html(response);
-                    cargar();
+                    fullCharge();
                 }
             });
         }
