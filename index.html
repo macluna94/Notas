@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gestion de Proyecto</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Admin Projects</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -21,39 +18,34 @@
     </script>
 
     <script src="https://kit.fontawesome.com/ea0ab640f1.js"></script>
-
-
+    <link rel="stylesheet" href="stylesadmin.css">
 </head>
 
-<body style="background-color: #3a3d40;" >
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<body>
+    <nav class="navbar navbar-expand-lg background-bar" style="color: white;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="note-icon.png" width="30" height="30" class="d-inline-block align-top" alt="note-icon">
-                Notas
+                <img src="code-icon.png" width="52" height="52" class="d-inline-block align-top" alt="code code-icon">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color: white;"></i>
+                </span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
 
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active align-items-center">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Graficas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Reportes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Configuracion</a>
+                        <a href="" class="text-white">
+                            Crear Proyecto
+                        </a>
+                        <small>
+                            <i class="fas fa-project-diagram"></i>
+                        </small>
                     </li>
                 </ul>
 
@@ -70,350 +62,49 @@
 
 
 
-    <div class="container-fluid DashButton">
+    
+    <div class="container-fluid background-subar">
 
-        <div class="row" style="padding-top: 1em;">
-            <div class="col-4">
-                <h4>Registro de Actividad</h4>
-            </div>
-
-            <div class="col-4">
-                <small id="resultado" class="text-center"></small>
-            </div>
-            <div class="col-4">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <button class="btn btn-success btn-sm" style="margin-right: 0.5em" type="button"
-                            data-toggle="modal" data-target="#AgregarModal">
-                            <i class="fas fa-plus-circle"></i>
-                            Agregar
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-info btn-sm" id="btn_update" onclick="fullCharge();">
-                            <i class="fas fa-sync"></i>
-                            Mostrar Nota
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
-
-
-
+        
+        <h2>Administracion de proyectos</h2>
+        
+        <p>Proyectos en estado de ejecucion</p>
+        
     </div>
-
+    
+    
     <div class="container-fluid">
+        
+        
+        <div class="card-columns" id="cardslayout" >
 
-
-
-        <div class="row">
-            <div class="col" id="colActive" style="padding: 0%;">
-                <div class="headerColumn">
-                    <h5 class="titleColumn-Active">
-                        <i class="fas fa-flag"></i>
-                        <strong>
-                            Nuevas Tareas
-                        </strong>
-                    </h5>
-                </div>
-                <div id="noteList-I" style="padding: 1em;"></div>
-            </div>
-
-            <div class="col" id="colProgress" style="padding: 0%;">
-                <div class="">
-                    <h5 class="titleColumn-Progress">
-                        <i class="fas fa-spinner"></i>
-                        <strong>
-                            Tareas en Progreso
-                        </strong>
-                    </h5>
-                    <div id="noteList-P" style="padding: 1em;"></div>
-
-                </div>
-            </div>
-
-            <div class="col" id="colFinal" style="padding: 0%;">
-                <div class="">
-                    <h5 class="titleColumn-Completed">
-                        <i class="fas fa-check-square"></i>
-                        <strong>
-                            Tareas Completadas
-
-                        </strong>
-                    </h5>
-                    <div id="noteList-C" style="padding: 1em;"></div>
-                </div>
-
-            </div>
         </div>
+
     </div>
 
 
-    <!-- Modal Agregar Nota -->
-    <div class="modal fade" id="AgregarModal" tabindex="-1" role="dialog" aria-labelledby="AgregarModal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header titleNote">
-                    <h5 class="modal-title  justify-content-end" id="AgregarModal" >Nueva Nota</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body titleNoteBody">
 
 
-                    <div class="form-group">
-                        <label for="noteName">Nombre:</label>
-                        <input type="text" class="form-control" id="noteName">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="description">Descripcion:</label>
-                        <textarea id="description" class="form-control" cols="3" rows="4"
-                            aria-describedby="emailHelp"></textarea>
-                        <small id="emailHelp" class="form-text text-muted">Describe detalladamente las acciones o
-                            instrucciones.</small>
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="stateNote">Estado:</label>
-
-                        <select class="form-control" id="stateNote">
-                            <option value="1">Inicio</option>
-                            <option value="2">Progreso</option>
-                            <option value="3">Completado</option>
-                        </select>
-
-                    </div>
-                </div>
-                <div class="modal-footer titleNote">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" id="saveNote"
-                        onclick="SaveNote($('#noteName').val(),$('#description').val(),$('#stateNote').val());fadeAlert();">
-                        Guardar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="EditarModal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EditarTitle">Mocachibo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="bodyModalEdit">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" onclick="editar($('#noteNameEdit').val(),$('#descriptionEdit').val(),$('#stateNoteEdit').val())" data-dismiss="modal" >Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="EliminarModal" tabindex="-1" role="dialog" aria-labelledby="EliminarModal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EliminarModal">Nota ${id}: ${nombre}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h3>Eliminar la nota <small id="EditarTitle"></small> </h3>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="eliminar()">Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    
+    
+    
     <script>
 
-        function modalTransfer(val) {
+    $(document).ready(loadcards);
 
-            var vali = val;
-            $('#EditarTitle').text(vali);
-
-            console.log("y"+vali);
-
-            function id(valix) {
-                $.ajax({
-                    data: {valix: valix},
-                    url: 'id.php',
-                    type: 'post',
-                    success: function (response) {
-                        $("#bodyModalEdit").html(response);
-                        console.log("x"+ valix);
-                    }
-                });
-            }
-            
-            id(vali);
-        }
-
-            function modalTransferE(val) {
-
-                var valiE = val;
-                $('#EditarTitle').text(valiE);
-
-                console.log("yE" + valiE);
-            }
-
-
-
-        $("#EditarModal").dialog({
-            modal: true,
-            buttons: {
-                Ok: function () {
-                    $(this).dialog("close");
-                }
-            }
-        });
-        $("#EliminarModal").dialog({
-            modal: true,
-            buttons: {
-                Ok: function () {
-                    $(this).dialog("close");
-                }
-            }
-        });
-        $("#AgregarModal").dialog({
-            modal: true,
-            buttons: {
-                Ok: function () {
-                    $(this).dialog("close");
-                }
+    function loadcards() {
+        $.ajax({
+            data: {},
+            url: 'projects_cards.php',
+            type: 'post',
+            success: function (datos) {
+                $('#cardslayout').html(datos);
             }
         });
 
+    }
 
-        function SaveNote(valor1, valor2, valor3) {
-            var parametros = {
-                "valor1": valor1,
-                "valor2": valor2,
-                "valor3": valor3
-            };
-
-            $.ajax({
-                data: parametros,
-                url: 'backprocess.php',
-                type: 'post',
-                beforeSend: function () {
-                    $('#resultado').html("Procesando");
-                },
-                success: function (response) {
-                    $("#resultado").html(response);
-                    fullCharge();
-                }
-            });
-
-            document.getElementById("noteName").value = "";
-            document.getElementById("description").value = "";
-            document.getElementById("stateNote").selectedIndex = "0";
-        }
-
-
-        function fullCharge() {
-                cargarI();
-                cargarP();
-            cargarC();
-
-            }
-
-        function cargarI() {
-            $.ajax({
-                data: {},
-                url: 'backCharge.php',
-                type: 'post',
-                success: function (datos) {
-                    $('#noteList-I').html(datos);
-                }
-            });
-        }
-
-
-        function cargarP() {
-            $.ajax({
-                data: {},
-                url: 'backChargeP.php',
-                type: 'post',
-                success: function (datosP) {
-                    $('#noteList-P').html(datosP);
-                }
-            });
-        }
-
-        function cargarC() {
-            $.ajax({
-                data: {},
-                url: 'backChargeC.php',
-                type: 'post',
-                success: function (datosC) {
-                    $('#noteList-C').html(datosC);
-                }
-            });
-        }
-
-
-        function editar(valor1, valor2, valor3) {
-            var id = $('#EditarTitle').text();
-
-            var parametros = {
-                "id": id,
-                "valor1": valor1,
-                "valor2": valor2,
-                "valor3": valor3
-            };
-
-
-
-            $.ajax({
-                data: parametros,
-                url: 'backedit.php',
-                type: 'post',
-                success: function () {
-                    fullCharge();
-                }
-            });
-        }
-
-        function eliminar() {
-            var id = $('#EditarTitle').text();
-            console.log("Elimanr: " + id);
-            
-            $.ajax({
-                data: {id_note: id},
-                url: 'backdelete.php',
-                type: 'post',
-                success: function (response) {
-                    $("#resultado").html(response);
-                    fullCharge();
-                }
-            });
-        }
-    </script>
-
-    </div>
-
-</body>
+</script>
+        </body>
 
 </html>
